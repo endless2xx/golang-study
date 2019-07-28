@@ -8,9 +8,10 @@ import (
 // 递归
 func main() {
 	// recursive(0)
-	result := fibonacci(3)
-	fmt.Println(result)
-	result = adds(100)
+	for i := 1; i <= 10; i++ {
+		fmt.Println(fibonacci(i))
+	}
+	result := adds(100)
 	fmt.Println(result)
 }
 
