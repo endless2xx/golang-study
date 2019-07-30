@@ -12,8 +12,9 @@ type Car struct {
 }
 
 type Train struct {
-	Car
-	int   // 同一种类型的匿名字段只能出现一次
+	Car       // 继承
+	car   Car // 组合
+	int       // 同一种类型的匿名字段只能出现一次
 	start time.Time
 	color string
 }
