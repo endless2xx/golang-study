@@ -29,6 +29,15 @@ type Student struct {
 	Score float32
 }
 
+func testInt(b interface{}) {
+	val := reflect.ValueOf(b)
+	val.Elem().SetInt(100)
+
+	c := val.Elem().Int()
+	fmt.Printf("get value interface{} %d\n", c)
+	fmt.Printf("string val: %d\n", val.Elem().Int())
+}
+
 // 反射：在运行时动态获取变量的相关信息
 func main() {
 	var a Student = Student{
@@ -37,4 +46,8 @@ func main() {
 		Score: 99,
 	}
 	test(a)
+
+	var b int = 10
+	testInt(&b)
+	fmt.Println(b)
 }
